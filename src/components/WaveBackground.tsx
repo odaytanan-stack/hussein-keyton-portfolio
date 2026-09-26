@@ -15,7 +15,12 @@ export function WaveBackground() {
           import("vanta/dist/vanta.waves.min"),
         ]);
         if (disposed || !ref.current) return;
-        effect = waves.default({
+        const importedWaves = waves.default as unknown;
+        const createWaves = typeof importedWaves === "function"
+          ? importedWaves
+          : (importedWaves as { default?: unknown })?.default;
+        if (typeof createWaves !== "function") return;
+        effect = createWaves({
           el: ref.current,
           THREE,
           mouseControls: true,
