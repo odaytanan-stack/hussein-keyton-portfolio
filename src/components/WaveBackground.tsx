@@ -31,10 +31,10 @@ export function WaveBackground() {
           scale: 1,
           scaleMobile: 1,
           color: 0x121922,
-          shininess: 27,
-          waveHeight: 12,
-          waveSpeed: 0.65,
-          zoom: 0.85,
+          shininess: 55,
+          waveHeight: 20,
+          waveSpeed: 0.8,
+          zoom: 0.75,
         });
       } catch (error) {
         console.warn("Animated background unavailable", error);
