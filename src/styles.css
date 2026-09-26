@@ -81,6 +81,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-links a { color: var(--light-foreground); text-decoration: none; font-size: 13px; font-weight: 700; transition: color .2s ease; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--gold); }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
+.language-switch { display: flex; align-items: center; gap: 2px; direction: ltr; color: var(--light-foreground); font-size: 11px; border: 1px solid var(--line-light); padding: 2px 5px; white-space: nowrap; }
+.language-switch button { color: var(--light-foreground); font-family: "Cairo", sans-serif; font-size: 11px; font-weight: 700; height: 27px; min-width: 31px; padding: 0 4px; border-radius: 2px; cursor: pointer; }
+.language-switch button:hover, .language-switch button.active { color: var(--gold); background: transparent; }
+.site-shell[dir="ltr"] .eyebrow::before { order: 2; }
+.site-shell[dir="ltr"] .portrait-label { right: 0; left: -14px; border-right: 0; border-left: 3px solid var(--gold); }
+.site-shell[dir="ltr"] .section-index { text-align: right; }
+.site-shell[dir="ltr"] .timeline-item::before { right: auto; left: 24px; }
+.site-shell[dir="ltr"] .timeline-item:first-child::before { left: 0; }
+.site-shell[dir="ltr"] .timeline-year { text-align: left; }
+.site-shell[dir="ltr"] .gallery-caption { right: 15px; left: 22px; }
+.site-shell[dir="ltr"] .contact-row strong { text-align: left; }
 .nav-cta { color: var(--primary-foreground); border: 1px solid var(--line-light); text-decoration: none; padding: 9px 21px; font-size: 12px; font-weight: 700; transition: border-color .2s, background .2s; }
 .nav-cta:hover { border-color: var(--gold); background: oklch(1 0 0 / 7%); }
 .mobile-menu { display: none; }
@@ -220,6 +231,9 @@ a.contact-row:hover strong { color: var(--primary); }
   .timeline { grid-template-columns: 1fr; border-top: none; border-right: 1px solid var(--border); }
   .timeline-item, .timeline-item:first-child { padding: 0 22px 28px 0; border: 0; }
   .timeline-item::before, .timeline-item:first-child::before { top: 10px; right: -5px; }
+  .site-shell[dir="ltr"] .timeline { border-right: 0; border-left: 1px solid var(--border); }
+  .site-shell[dir="ltr"] .timeline-item, .site-shell[dir="ltr"] .timeline-item:first-child { padding: 0 0 28px 22px; }
+  .site-shell[dir="ltr"] .timeline-item::before, .site-shell[dir="ltr"] .timeline-item:first-child::before { left: -5px; }
   .timeline-item:last-child { padding-bottom: 0; }
   .gallery-grid { grid-template-columns: 1fr 1fr; height: auto; }
   .gallery-item { height: 230px; }

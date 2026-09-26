@@ -12,3 +12,4 @@
 - Keep the portfolio as an Arabic-first, single-page TanStack route; section anchors make the long-form story easy to navigate.
 - Load Vanta Waves only in a browser effect with Three.js and destroy it on unmount; server rendering cannot access WebGL.
 - Keep original portfolio photographs in Lovable asset storage via committed asset pointers; this avoids relying on the old site's availability.
+- Keep Arabic and English portfolio text in one shared copy module and switch direction at the page level; this prevents sections from drifting out of translation.
