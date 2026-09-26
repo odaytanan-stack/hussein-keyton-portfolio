@@ -1,0 +1,2 @@
+- [ ] Add Arabic–English switching across all portfolio sections, retaining Arabic as the default.
+- [ ] Verify both languages on desktop and mobile, including refresh and anchored navigation.
