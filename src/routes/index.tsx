@@ -66,7 +66,7 @@ function Index() {
     setLanguage(next); window.localStorage.setItem("portfolio-language", next); setMenuOpen(false);
   }
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset["theme"] = theme;
     document.documentElement.style.colorScheme = theme;
   }, [theme]);
   function switchTheme() {
