@@ -2,7 +2,7 @@ export type Language = "ar" | "en";
 
 export const portfolioCopy = {
   ar: {
-    name: "حسين كيطون", brandLabel: "حسين كيطون، العودة إلى الرئيسية", menuLabel: "التنقل الرئيسي", openMenu: "فتح القائمة", closeMenu: "إغلاق القائمة", contact: "تواصل معي", letsTalk: "لنتحدث",
+    name: "حسين كيطون", brandLabel: "حسين كيطون، العودة إلى الرئيسية", menuLabel: "التنقل الرئيسي", openMenu: "فتح القائمة", closeMenu: "إغلاق القائمة", lightMode: "تفعيل الوضع الفاتح", darkMode: "تفعيل الوضع الداكن", contact: "تواصل معي", letsTalk: "لنتحدث",
     nav: ["الرئيسية", "من أنا", "المشاريع", "المسيرة", "التصوير الجوي"],
     eyebrow: "رائد أعمال تقني ومستشار نمو رقمي", role: "أفكار طموحة. أثر حقيقي.", heroDescription: "أبني جسوراً بين التقنية والأعمال والإبداع. من تطوير الحلول الرقمية واستراتيجيات النمو، إلى قيادة مشاريع ريادية توصل الأفكار إلى واقع ملموس.", explore: "استكشف أعمالي", locationsShort: "دمشق · ميونخ", languages: "عربي · Deutsch · English", portraitAlt: "صورة حسين كيطون", portraitRole: "مؤسس ورائد أعمال",
     stats: ["سنوات من الخبرة", "مشاريع ومؤسسات", "متدرباً في التصوير والبرمجة", "لغات أتحدثها"],
@@ -28,7 +28,7 @@ export const portfolioCopy = {
     contactKicker: "05 / تواصل معي", contactTitle: "لنصنع شيئاً ذا قيمة معاً.", contactLead: "هل لديك فكرة أو مشروع أو فرصة للتعاون؟ يسعدني أن أسمع منك ونناقش كيف يمكن تحويلها إلى أثر حقيقي.", emailMe: "راسلني الآن", emailLabel: "البريد الإلكتروني", phoneLabel: "رقم التواصل", locationLabel: "المواقع", locations: "دمشق، سوريا · ميونخ، ألمانيا", footerTag: "ريادة أعمال · تقنية · إبداع", backToTop: "العودة للأعلى ↑",
   },
   en: {
-    name: "Hussein Keyton", brandLabel: "Hussein Keyton, back to home", menuLabel: "Main navigation", openMenu: "Open menu", closeMenu: "Close menu", contact: "Contact me", letsTalk: "Let's talk",
+    name: "Hussein Keyton", brandLabel: "Hussein Keyton, back to home", menuLabel: "Main navigation", openMenu: "Open menu", closeMenu: "Close menu", lightMode: "Switch to light mode", darkMode: "Switch to dark mode", contact: "Contact me", letsTalk: "Let's talk",
     nav: ["Home", "About", "Projects", "Journey", "Aerial photography"],
     eyebrow: "Tech entrepreneur & digital growth consultant", role: "Ambitious ideas. Real impact.", heroDescription: "I connect technology, business and creativity. From digital solutions and growth strategies to ventures that turn ambitious ideas into tangible results.", explore: "Explore my work", locationsShort: "Damascus · Munich", languages: "Arabic · Deutsch · English", portraitAlt: "Portrait of Hussein Keyton", portraitRole: "Founder & entrepreneur",
     stats: ["Years of experience", "Projects & ventures", "Photography and coding trainees", "Languages I speak"],

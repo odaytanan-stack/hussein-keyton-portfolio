@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowDownLeft, ArrowLeft, ArrowUpLeft, Check, Globe2, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { ArrowDownLeft, ArrowLeft, ArrowUpLeft, Check, Globe2, Mail, MapPin, Menu, Moon, Phone, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WaveBackground } from "@/components/WaveBackground";
 import { portfolioCopy, type Language } from "@/lib/portfolio-copy";
@@ -29,6 +29,7 @@ const projectDetails = [
 ];
 const milestoneYears = ["2009", "2018", "2021", "2023 — 2024"];
 const galleryImages = [damascus.url, germany.url, reelo.url];
+type Theme = "light" | "dark";
 
 function useReveal(language: Language) {
   useEffect(() => {
@@ -45,12 +46,16 @@ function useReveal(language: Language) {
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState<Language>("ar");
+  const [theme, setTheme] = useState<Theme>("light");
   const t = portfolioCopy[language];
   useReveal(language);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("portfolio-language");
     if (saved === "ar" || saved === "en") setLanguage(saved);
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    setTheme(savedTheme === "light" || savedTheme === "dark" ? savedTheme : preferredTheme);
   }, []);
   useEffect(() => {
     document.documentElement.lang = language;
@@ -60,8 +65,16 @@ function Index() {
   function switchLanguage(next: Language) {
     setLanguage(next); window.localStorage.setItem("portfolio-language", next); setMenuOpen(false);
   }
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+  }, [theme]);
+  function switchTheme() {
+    const next = theme === "light" ? "dark" : "light";
+    setTheme(next); window.localStorage.setItem("portfolio-theme", next);
+  }
 
-  return <div className="site-shell" dir={language === "ar" ? "rtl" : "ltr"}>
+  return <div className="site-shell" dir={language === "ar" ? "rtl" : "ltr"} data-theme={theme}>
     <section className="hero" id="home"><WaveBackground />
       <header className="site-header"><div className="container-wide nav-inner">
         <a href="#home" className="brand" aria-label={t.brandLabel} onClick={() => setMenuOpen(false)}><span className="brand-mark">{language === "ar" ? "ح" : "H"}</span><span className="brand-name">{t.name}</span></a>
@@ -70,6 +83,7 @@ function Index() {
         </nav>
         <div className="nav-actions">
           <div className="language-switch" role="group" aria-label="Language / اللغة"><Button type="button" variant="ghost" size="sm" className={language === "ar" ? "active" : ""} aria-pressed={language === "ar"} onClick={() => switchLanguage("ar")}>عربي</Button><span aria-hidden="true">/</span><Button type="button" variant="ghost" size="sm" className={language === "en" ? "active" : ""} aria-pressed={language === "en"} onClick={() => switchLanguage("en")}>EN</Button></div>
+          <Button type="button" variant="ghost" size="icon" className="theme-toggle" onClick={switchTheme} aria-label={theme === "dark" ? t.lightMode : t.darkMode} title={theme === "dark" ? t.lightMode : t.darkMode}>{theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}</Button>
           <a className="nav-cta" href="#contact">{t.letsTalk} <ArrowUpLeft size={13} /></a>
           <Button type="button" variant="ghost" size="icon" className="mobile-menu" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? t.closeMenu : t.openMenu} aria-expanded={menuOpen}>{menuOpen ? <X size={18} /> : <Menu size={18} />}</Button>
         </div>
