@@ -4,10 +4,10 @@ import { ArrowDownLeft, ArrowLeft, ArrowUpLeft, Check, Globe2, Mail, MapPin, Men
 import { Button } from "@/components/ui/button";
 import { WaveBackground } from "@/components/WaveBackground";
 import { portfolioCopy, type Language } from "@/lib/portfolio-copy";
-import portrait from "@/assets/portrait.asset.json";
-import reelo from "@/assets/reelo.asset.json";
-import damascus from "@/assets/damascus.asset.json";
-import germany from "@/assets/germany.asset.json";
+const portrait = { url: "/images/portrait.jpg" };
+const reelo = { url: "/images/reelo.jpg" };
+const damascus = { url: "/images/damascus.jpg" };
+const germany = { url: "/images/germany.jpg" };
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
