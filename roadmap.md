@@ -1,4 +1,4 @@
 - [x] Add Arabic–English switching across all portfolio sections, retaining Arabic as the default.
 - [x] Verify both languages on desktop and mobile, including refresh and anchored navigation.
-- [ ] Add a remembered light and dark appearance switch in both languages.
-- [ ] Verify both appearances on desktop and mobile.
+- [x] Add a remembered light and dark appearance switch in both languages.
+- [x] Verify both appearances on desktop and mobile.
